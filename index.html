@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <script src="./lib/utils.js"></script>
@@ -9,27 +10,57 @@
     <script src="./lib/ship.js"></script>
     <script src="./lib/bullet.js"></script>
     <style>
-      canvas {
-        border: 5px solid black;
-      }
+    
+    html, head, body, canvas {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-family: inherit;
+      font-size: inherit;
+      vertical-align: baseline;
+    }
+
+    html {
+      background: black;
+    }
+      
+    html, body {
+      height: 90%;
+    }
+      
+    .game {
+      width: 600px;
+      margin: 50px auto;
+    }
+    
+    canvas {
+      border: 5px solid red;
+    }
+      
     </style>
   </head>
   <body>
-    <canvas width="800" height="800" id="canvas"></canvas>
-    <script>
-      var random_images = ["./lib/images/cat.jpg", "./lib/images/kanye.jpg"]
-      var num = Math.floor( Math.random() * random_images.length )
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d');
-      var img = new Image();
-      img.src = random_images[num];
-      img.onload = function () {
-        ctx.drawImage(img, 0, 0, 800, 800);
-      };
-      var game = new Asteroids.Game();
-      var gameView = new Asteroids.GameView(game, ctx);
+    <div class="game">
+      <canvas width="600" height="600" id="canvas"></canvas>
+      <script>
+        var random_images = ["./lib/images/cat.jpg", "./lib/images/kanye.jpg"]
+        var num = Math.floor( Math.random() * random_images.length )
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+      
+        img.src = random_images[num];
+        img.onload = function () {
+          ctx.drawImage(img, 0, 0, 600, 600);
+        };
+      
+        var game = new Asteroids.Game();
+        var gameView = new Asteroids.GameView(game, ctx);
 
-      gameView.start();
-    </script>
+        gameView.start( function() {
+          alert("You have defeated the Kanye Horde! The galaxy thanks you for your valiant effort.")
+        });
+      </script>
+  </div>
   </body>
 </html>
