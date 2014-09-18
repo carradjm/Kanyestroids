@@ -23,23 +23,37 @@
     html {
       background: black;
     }
-      
-    html, body {
-      height: 90%;
+    
+    body {
+      font-family: sans-serif;
     }
       
     .game {
       width: 600px;
-      margin: 50px auto;
+      margin: 5px auto;
+      margin-bottom: 10px;
     }
     
     canvas {
       border: 5px solid red;
     }
+    
+    .game-info > p {
+      color: white;
+      width: 600px;
+      margin: 5px auto;
+      text-align: center;
+    }
       
     </style>
   </head>
   <body>
+    <article class='game-info'>
+      <p>For best experience play in Full-Screen mode</p>
+      <p>Controls: ARROW KEYS: Move, SPACEBAR: Shoot</p>
+      <p style="color: white">The year 2027 - Kanye's ego has overrun his the limits of his mortal body and transformed itself into countless floating Kanye heads.</p>
+      <p>They threaten to overrun the universe! As Jay-Z, you are our last remaining hope.  Defeat Kanye, save the galaxy and acheieve eternal glory!
+    </article>
     <div class="game">
       <canvas width="600" height="600" id="canvas"></canvas>
       <script>
@@ -61,10 +75,6 @@
           alert("You have defeated the Kanye Horde! The galaxy thanks you for your valiant effort.")
         });
       </script>
-  </div>
+  </div> 
   </body>
-  <article>
-    <p>The year 2027 - Kanye's ego has overrun his the limits of his mortal body and transformed itself ito countless floating Kanye heads.</p>
-    <p>They threaten to overrun the universe! As Jay-Z, you are our last remaining hope.  Defeat Kanye, save the galaxy and acheieve eternal glory!
-  </article>
 </html>
